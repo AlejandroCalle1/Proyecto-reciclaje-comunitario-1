@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}INDEX{% endblock %}
+
+{% block content %}
+<header class="text-white text-center py-5" style="background: linear-gradient(to right, #141e30, #243b55);">
+  <div class="container">
+    <h1 class="display-4">Welcome to My Flask App</h1>
+    <p class="lead">This is a cool header section with a modern gradient background.</p>
+    <a href="{{ url_for('informacion1') }}" class="btn btn-outline-light mt-3">Explore Features</a>
+  </div>
+</header>
+{% endblock %}
