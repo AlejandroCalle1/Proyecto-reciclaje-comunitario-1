@@ -1,13 +1,65 @@
 {% extends 'base.html' %}
-
-{% block title %}INDEX{% endblock %}
-
+{% block title %}Inicio{% endblock %}
 {% block content %}
 <header class="text-white text-center py-5" style="background: linear-gradient(to right, #141e30, #243b55);">
   <div class="container">
-    <h1 class="display-4">Welcome to My Flask App</h1>
-    <p class="lead">This is a cool header section with a modern gradient background.</p>
-    <a href="{{ url_for('informacion1') }}" class="btn btn-outline-light mt-3">Explore Features</a>
+    <h1 class="display-4">Bienvenido a tu Sistema de Reciclaje</h1>
+    <p class="lead">Calcula tu impacto ambiental y mejora tu comunidad.</p>
+    <a href="{{ url_for('funciones') }}" class="btn btn-outline-light mt-3">Explorar funciones</a>
   </div>
 </header>
+
+<section class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="card shadow rounded-4 border-0">
+        <div class="card-body p-5">
+          <h2 class="mb-4 text-center text-success">¿Por qué es importante el reciclaje?</h2>
+          <p>El reciclaje transforma los desechos en nuevos recursos, reduciendo la necesidad de extraer nuevos materiales y disminuyendo la contaminación.</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">♻️ Reduce la cantidad de residuos en vertederos.</li>
+            <li class="list-group-item">⚡ Ahorra energía y recursos naturales.</li>
+            <li class="list-group-item">🌍 Disminuye las emisiones de gases de efecto invernadero.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5">
+  <h2 class="text-center mb-4">Funciones principales</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <a href="{{ url_for('impacto') }}" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-success hover-shadow">
+          <div class="card-body">
+            <h5 class="card-title text-success">Calcular impacto</h5>
+            <p class="card-text">Conoce cuántas emisiones de CO₂ has evitado gracias a tu reciclaje.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <a href="{{ url_for('estadisticas') }}" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-success hover-shadow">
+          <div class="card-body">
+            <h5 class="card-title text-success">Ver estadísticas</h5>
+            <p class="card-text">Gráficos e información sobre tus hábitos de reciclaje.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 mb-4">
+      <a href="{{ url_for('reportes') }}" class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-success hover-shadow">
+          <div class="card-body">
+            <h5 class="card-title text-success">Generar reportes</h5>
+            <p class="card-text">Exporta tu actividad de reciclaje en PDF o Excel.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 {% endblock %}
