@@ -1,8 +1,170 @@
 {% extends 'base.html' %}
-{% block title %}Impacto{% endblock %}
+{% block title %}Registrar Reciclaje{% endblock %}
+
 {% block content %}
 <div class="container my-5">
-  <h1>Impacto Ambiental</h1>
-  <p>Aquí puedes ver el impacto que generas con tus acciones de reciclaje.</p>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow border-0">
+        <div class="card-header bg-success text-white py-3">
+          <h2 class="h4 mb-0 text-center"><i class="fas fa-recycle me-2"></i> Registrar material reciclado</h2>
+        </div>
+        <div class="card-body p-4">
+          <form method="POST" class="needs-validation" novalidate>
+            <div class="mb-4">
+              <label for="tipo" class="form-label fw-bold">Tipo de material</label>
+              <select class="form-select form-select-lg" name="tipo" required>
+                <option value="" selected disabled>Seleccione un material</option>
+                <option value="Plástico">Plástico</option>
+                <option value="Vidrio">Vidrio</option>
+                <option value="Papel">Papel</option>
+                <option value="Cartón">Cartón</option>
+                <option value="Metal">Metal</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona un tipo de material.
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <label for="cantidad" class="form-label fw-bold">Cantidad (kg)</label>
+              <div class="input-group">
+                <input type="number" name="cantidad" class="form-control form-control-lg" required min="0" step="0.1" placeholder="Ej. 2.5">
+                <span class="input-group-text">kilogramos</span>
+              </div>
+              <div class="invalid-feedback">
+                Por favor ingresa una cantidad válida.
+              </div>
+            </div>
+            
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <label for="fecha" class="form-label fw-bold">Fecha</label>
+                <input type="date" name="fecha" class="form-control form-control-lg" required>
+                <div class="invalid-feedback">
+                  Por favor selecciona una fecha.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="ubicacion" class="form-label fw-bold">Ubicación</label>
+                <input type="text" name="ubicacion" class="form-control form-control-lg" required placeholder="Ej. Popayán, Cauca">
+                <div class="invalid-feedback">
+                  Por favor ingresa una ubicación.
+                </div>
+              </div>
+            </div>
+            
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg py-3">
+                <i class="fas fa-save me-2"></i> Registrar Reciclaje
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+{% if materiales %}
+<div class="container my-5">
+  <div class="card shadow border-0">
+    <div class="card-header bg-primary text-white py-3">
+      <h3 class="h4 mb-0"><i class="fas fa-history me-2"></i> Historial de reciclaje</h3>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Material</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Ubicación</th>
+              <th scope="col">CO₂ evitado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for m in materiales %}
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  {% if m.tipo == 'Plástico' %}
+                  <i class="fas fa-bottle-water text-primary me-2"></i>
+                  {% elif m.tipo == 'Vidrio' %}
+                  <i class="fas fa-glass-water text-info me-2"></i>
+                  {% elif m.tipo == 'Papel' %}
+                  <i class="fas fa-file-lines text-warning me-2"></i>
+                  {% elif m.tipo == 'Cartón' %}
+                  <i class="fas fa-box text-brown me-2"></i>
+                  {% else %}
+                  <i class="fas fa-cubes text-secondary me-2"></i>
+                  {% endif %}
+                  <span>{{ m.tipo }}</span>
+                </div>
+              </td>
+              <td>{{ m.cantidad }} kg</td>
+              <td>{{ m.fecha }}</td>
+              <td>{{ m.ubicacion }}</td>
+              <td>
+                <span class="badge bg-success rounded-pill">
+                  {{ m.co2 }} kg
+                </span>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<script>
+// Validación de formulario con Bootstrap
+(function () {
+  'use strict'
+  
+  const forms = document.querySelectorAll('.needs-validation')
+  
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+
+<style>
+  .form-select-lg, .form-control-lg {
+    padding: 0.75rem 1rem;
+    font-size: 1.05rem;
+  }
+  
+  .table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .table td {
+    vertical-align: middle;
+  }
+  
+  .badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+  }
+  
+  .text-brown {
+    color: #8d6e63;
+  }
+</style>
 {% endblock %}

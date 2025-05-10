@@ -1,65 +1,151 @@
 {% extends 'base.html' %}
 {% block title %}Inicio{% endblock %}
 {% block content %}
-<header class="text-white text-center py-5" style="background: linear-gradient(to right, #141e30, #243b55);">
-  <div class="container">
-    <h1 class="display-4">Bienvenido a tu Sistema de Reciclaje</h1>
-    <p class="lead">Calcula tu impacto ambiental y mejora tu comunidad.</p>
-    <a href="{{ url_for('funciones') }}" class="btn btn-outline-light mt-3">Explorar funciones</a>
+<section class="hero-section py-5" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center; background-size: cover;">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 text-white">
+        <h1 class="display-4 fw-bold mb-4">Transforma tu reciclaje en impacto real</h1>
+        <p class="lead mb-4">Registra, mide y comparte tu contribución al medio ambiente con nuestra plataforma.</p>
+        <div class="d-flex gap-3">
+          <a href="{{ url_for('impacto') }}" class="btn btn-primary btn-lg px-4">
+            <i class="fas fa-plus-circle me-2"></i> Registrar Reciclaje
+          </a>
+          <a href="{{ url_for('funciones') }}" class="btn btn-outline-light btn-lg px-4">
+            <i class="fas fa-play-circle me-2"></i> Cómo funciona
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" class="img-fluid floating-animation" alt="Ilustración reciclaje" style="max-height: 400px;">
+      </div>
+    </div>
   </div>
-</header>
+</section>
 
-<section class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-10">
-      <div class="card shadow rounded-4 border-0">
-        <div class="card-body p-5">
-          <h2 class="mb-4 text-center text-success">¿Por qué es importante el reciclaje?</h2>
-          <p>El reciclaje transforma los desechos en nuevos recursos, reduciendo la necesidad de extraer nuevos materiales y disminuyendo la contaminación.</p>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">♻️ Reduce la cantidad de residuos en vertederos.</li>
-            <li class="list-group-item">⚡ Ahorra energía y recursos naturales.</li>
-            <li class="list-group-item">🌍 Disminuye las emisiones de gases de efecto invernadero.</li>
-          </ul>
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eco-badge mb-3">Impacto ambiental</span>
+      <h2 class="fw-bold">Tu reciclaje hace la diferencia</h2>
+      <p class="lead text-muted">Cada material que reciclas contribuye a un planeta más limpio y sostenible.</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-success bg-opacity-10 rounded-circle p-3 mb-3 mx-auto" style="width: 70px; height: 70px;">
+              <i class="fas fa-tree text-success" style="font-size: 1.8rem;"></i>
+            </div>
+            <h3 class="h5 fw-bold">Árboles salvados</h3>
+            <p class="text-muted">Cada 100kg de papel reciclado salva aproximadamente 1 árbol.</p>
+            <div class="impact-number mt-2">1.2K</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-success bg-opacity-10 rounded-circle p-3 mb-3 mx-auto" style="width: 70px; height: 70px;">
+              <i class="fas fa-cloud text-success" style="font-size: 1.8rem;"></i>
+            </div>
+            <h3 class="h5 fw-bold">CO₂ evitado</h3>
+            <p class="text-muted">Reduce las emisiones de gases de efecto invernadero.</p>
+            <div class="impact-number mt-2">4.5T</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-success bg-opacity-10 rounded-circle p-3 mb-3 mx-auto" style="width: 70px; height: 70px;">
+              <i class="fas fa-bolt text-success" style="font-size: 1.8rem;"></i>
+            </div>
+            <h3 class="h5 fw-bold">Energía ahorrada</h3>
+            <p class="text-muted">El reciclaje consume menos energía que producir nuevos materiales.</p>
+            <div class="impact-number mt-2">78%</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="container my-5">
-  <h2 class="text-center mb-4">Funciones principales</h2>
-  <div class="row">
-    <div class="col-md-4 mb-4">
-      <a href="{{ url_for('impacto') }}" class="text-decoration-none text-dark">
-        <div class="card h-100 shadow-sm border-success hover-shadow">
-          <div class="card-body">
-            <h5 class="card-title text-success">Calcular impacto</h5>
-            <p class="card-text">Conoce cuántas emisiones de CO₂ has evitado gracias a tu reciclaje.</p>
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="img-fluid rounded-3 shadow" alt="Persona reciclando">
+      </div>
+      <div class="col-lg-6 ps-lg-5">
+        <span class="eco-badge mb-3">Cómo funciona</span>
+        <h2 class="fw-bold mb-4">Registra tu reciclaje en 3 simples pasos</h2>
+        
+        <div class="d-flex mb-4">
+          <div class="flex-shrink-0">
+            <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">1</div>
+          </div>
+          <div class="flex-grow-1 ms-3">
+            <h5 class="fw-bold">Selecciona el material</h5>
+            <p class="text-muted mb-0">Elige entre plástico, vidrio, papel, cartón o metal.</p>
           </div>
         </div>
-      </a>
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="{{ url_for('estadisticas') }}" class="text-decoration-none text-dark">
-        <div class="card h-100 shadow-sm border-success hover-shadow">
-          <div class="card-body">
-            <h5 class="card-title text-success">Ver estadísticas</h5>
-            <p class="card-text">Gráficos e información sobre tus hábitos de reciclaje.</p>
+        
+        <div class="d-flex mb-4">
+          <div class="flex-shrink-0">
+            <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">2</div>
+          </div>
+          <div class="flex-grow-1 ms-3">
+            <h5 class="fw-bold">Ingresa la cantidad</h5>
+            <p class="text-muted mb-0">Especifica los kilogramos que estás reciclando.</p>
           </div>
         </div>
-      </a>
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="{{ url_for('reportes') }}" class="text-decoration-none text-dark">
-        <div class="card h-100 shadow-sm border-success hover-shadow">
-          <div class="card-body">
-            <h5 class="card-title text-success">Generar reportes</h5>
-            <p class="card-text">Exporta tu actividad de reciclaje en PDF o Excel.</p>
+        
+        <div class="d-flex">
+          <div class="flex-shrink-0">
+            <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">3</div>
+          </div>
+          <div class="flex-grow-1 ms-3">
+            <h5 class="fw-bold">Visualiza tu impacto</h5>
+            <p class="text-muted mb-0">Observa cómo contribuyes al medio ambiente.</p>
           </div>
         </div>
-      </a>
+        
+        <a href="{{ url_for('impacto') }}" class="btn btn-primary mt-4 px-4">
+          <i class="fas fa-play me-2"></i> Comenzar ahora
+        </a>
+      </div>
     </div>
   </div>
 </section>
-{% endblock %}
+
+<style>
+  .hero-section {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .floating-animation {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .icon-wrapper {
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover .icon-wrapper {
+    transform: rotate(10deg) scale(1.1);
+    background-color: rgba(46, 125, 50, 0.2) !important;
+  }
+</style>
+{% endblock %}}

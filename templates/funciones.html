@@ -1,371 +1,355 @@
 {% extends 'base.html' %}
 {% block title %}Funciones del Sistema{% endblock %}
-{% block content %}
-<div class="container py-5">
-    <!-- Hero Section -->
-    <section class="text-center mb-5 fade-in">
-        <div class="wavy-underline mb-4">
-            <h1 class="display-4 fw-bold text-gradient mb-3">Explora Nuestras Funciones</h1>
-        </div>
-        <p class="lead text-muted mx-auto" style="max-width: 600px;">Una experiencia de reciclaje inteligente diseñada para simplificar tu contribución ambiental</p>
-        <div class="mt-4">
-            <div class="floating-illustration">
-                <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" class="img-fluid" style="height: 180px;" alt="Ilustración reciclaje">
-            </div>
-        </div>
-    </section>
 
-    <!-- Features Grid -->
-    <div class="row g-4 feature-grid">
-        <!-- Feature 1 -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm rounded-4 feature-card" data-aos="fade-up">
-                <div class="card-body p-4 text-center">
-                    <div class="icon-wrapper mx-auto mb-4 pulse">
-                        <div class="icon-bg bg-success bg-opacity-10"></div>
-                        <img src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" width="42" alt="Registro icon" class="icon-img">
-                    </div>
-                    <h3 class="h5 fw-bold mb-3">Registro Inteligente</h3>
-                    <p class="text-muted mb-4">Digitaliza tus materiales reciclados con reconocimiento de imagen y datos precisos</p>
-                    <div class="mockup-img mt-auto">
-                        <img src="https://cdn.dribbble.com/users/31864/screenshots/3661462/media/9e5d2f529b4d2c1f4a7c5e5e5e5e5e5e.png" class="img-fluid rounded-3 border" style="height: 140px;" alt="Mockup registro">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm rounded-4 feature-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-body p-4 text-center">
-                    <div class="icon-wrapper mx-auto mb-4 pulse">
-                        <div class="icon-bg bg-success bg-opacity-10"></div>
-                        <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" width="42" alt="Analytics icon" class="icon-img">
-                    </div>
-                    <h3 class="h5 fw-bold mb-3">Impacto Visual</h3>
-                    <p class="text-muted mb-4">Dashboard interactivo que transforma tu reciclaje en métricas comprensibles</p>
-                    <div class="mockup-img mt-auto">
-                        <img src="https://cdn.dribbble.com/users/31864/screenshots/3661462/media/9e5d2f529b4d2c1f4a7c5e5e5e5e5e5e.png" class="img-fluid rounded-3 border" style="height: 140px;" alt="Mockup analytics">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm rounded-4 feature-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="card-body p-4 text-center">
-                    <div class="icon-wrapper mx-auto mb-4 pulse">
-                        <div class="icon-bg bg-success bg-opacity-10"></div>
-                        <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" width="42" alt="Report icon" class="icon-img">
-                    </div>
-                    <h3 class="h5 fw-bold mb-3">Reportes Automáticos</h3>
-                    <p class="text-muted mb-4">Genera certificados de impacto ambiental listos para compartir</p>
-                    <div class="mockup-img mt-auto">
-                        <img src="https://cdn.dribbble.com/users/31864/screenshots/3661462/media/9e5d2f529b4d2c1f4a7c5e5e5e5e5e5e.png" class="img-fluid rounded-3 border" style="height: 140px;" alt="Mockup reportes">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Visual Demo Section -->
-    <section class="row mt-5 py-5 align-items-center demo-section">
-        <div class="col-lg-6 pe-lg-5" data-aos="fade-right">
-            <div class="pe-lg-4">
-                <div class="d-flex align-items-start mb-4">
-                    <div class="flex-shrink-0">
-                        <div class="feature-badge rounded-circle bg-success bg-opacity-10 p-3">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" width="24" alt="Check icon">
-                        </div>
-                    </div>
-                    <div class="flex-grow-1 ms-4">
-                        <h4 class="h5 fw-bold">Registro con un clic</h4>
-                        <p class="text-muted mb-0">Nuestro sistema de reconocimiento de imágenes identifica automáticamente el tipo de material</p>
-                    </div>
-                </div>
-                
-                <div class="d-flex align-items-start mb-4">
-                    <div class="flex-shrink-0">
-                        <div class="feature-badge rounded-circle bg-success bg-opacity-10 p-3">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" width="24" alt="Check icon">
-                        </div>
-                    </div>
-                    <div class="flex-grow-1 ms-4">
-                        <h4 class="h5 fw-bold">Historial Inteligente</h4>
-                        <p class="text-muted mb-0">Filtra por fecha, material o ubicación con nuestro sistema de búsqueda avanzada</p>
-                    </div>
-                </div>
-                
-                <div class="d-flex align-items-start">
-                    <div class="flex-shrink-0">
-                        <div class="feature-badge rounded-circle bg-success bg-opacity-10 p-3">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" width="24" alt="Check icon">
-                        </div>
-                    </div>
-                    <div class="flex-grow-1 ms-4">
-                        <h4 class="h5 fw-bold">Comparte tus logros</h4>
-                        <p class="text-muted mb-0">Exporta reportes en PDF con diseños profesionales para redes sociales</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left">
-            <div class="position-relative device-mockup">
-                <img src="https://cdn.dribbble.com/users/31864/screenshots/3661462/media/9e5d2f529b4d2c1f4a7c5e5e5e5e5e5e.png" class="img-fluid rounded-4 shadow-lg" alt="App demo">
-                <div class="floating-dots">
-                    <span class="dot dot-1"></span>
-                    <span class="dot dot-2"></span>
-                    <span class="dot dot-3"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="row mt-5 g-4 text-center stats-section" data-aos="fade-up">
-        <div class="col-md-4">
-            <div class="p-4 rounded-4 stat-card h-100">
-                <div class="stat-icon mb-3 mx-auto">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" width="40" alt="Materials icon">
-                </div>
-                <h3 class="display-5 fw-bold text-gradient mb-2">+500</h3>
-                <p class="mb-0 text-muted">Materiales registrados</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-4 rounded-4 stat-card h-100">
-                <div class="stat-icon mb-3 mx-auto">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" width="40" alt="CO2 icon">
-                </div>
-                <h3 class="display-5 fw-bold text-gradient mb-2">1.2T</h3>
-                <p class="mb-0 text-muted">CO₂ reducido</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-4 rounded-4 stat-card h-100">
-                <div class="stat-icon mb-3 mx-auto">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" width="40" alt="Happy icon">
-                </div>
-                <h3 class="display-5 fw-bold text-gradient mb-2">100%</h3>
-                <p class="mb-0 text-muted">Satisfacción usuarios</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="text-center mt-5 py-5" data-aos="zoom-in">
-        <h2 class="h1 fw-bold mb-4">¿Listo para comenzar?</h2>
-        <p class="lead text-muted mb-4">Únete a nuestra comunidad eco-friendly y lleva tu reciclaje al siguiente nivel</p>
-        <button class="btn btn-success btn-lg px-4 py-2 cta-button">
-            <span class="cta-text">Regístrate Gratis</span>
-            <span class="cta-icon ms-2">→</span>
-        </button>
-    </section>
-</div>
-
+{% block extra_css %}
 <style>
-    /* Animaciones */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-    }
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-    
-    /* Efectos */
-    .fade-in { animation: fadeIn 1s ease-out; }
-    .floating-illustration { animation: float 6s ease-in-out infinite; }
-    .pulse { animation: pulse 2s infinite; }
-    
-    .feature-card {
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        background: linear-gradient(to bottom, #ffffff, #f8f9fa);
-    }
-    .feature-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-    }
-    
-    .icon-wrapper {
-        position: relative;
-        width: 80px;
-        height: 80px;
-        margin-bottom: 1.5rem;
-    }
-    .icon-bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        opacity: 0.3;
-        transform: scale(0.8);
-        transition: all 0.3s ease;
-    }
-    .icon-img {
-        position: relative;
-        transition: all 0.3s ease;
-    }
-    .feature-card:hover .icon-bg {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    .feature-card:hover .icon-img {
-        transform: rotate(10deg) scale(1.1);
-    }
-    
-    .text-gradient {
-        background: linear-gradient(135deg, #28a745, #20c997);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-    
-    .wavy-underline {
-        display: inline-block;
-        position: relative;
-    }
-    .wavy-underline:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 15px;
-        bottom: 5px;
-        left: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' stroke='%2328a745' stroke-width='3' stroke-linecap='round' d='M0,15 C30,25 70,5 100,15 C130,25 170,5 200,15'/%3E%3C/svg%3E");
-        background-repeat: repeat-x;
-        background-size: 200px 20px;
-        opacity: 0.6;
-        z-index: -1;
-    }
-    
-    .device-mockup {
-        position: relative;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-    .floating-dots {
-        position: absolute;
-    }
-    .dot {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(40, 167, 69, 0.2);
-    }
-    .dot-1 {
-        width: 20px;
-        height: 20px;
-        top: -10px;
-        left: -10px;
-        animation: float 4s ease-in-out infinite;
-    }
-    .dot-2 {
-        width: 30px;
-        height: 30px;
-        bottom: 20px;
-        right: -15px;
-        animation: float 5s ease-in-out infinite reverse;
-    }
-    .dot-3 {
-        width: 15px;
-        height: 15px;
-        bottom: -20px;
-        left: 30%;
-        animation: float 6s ease-in-out infinite 1s;
-    }
-    
-    .stat-card {
-        transition: all 0.3s ease;
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    .stat-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    .stat-icon {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(40, 167, 69, 0.1);
-        border-radius: 50%;
-    }
-    
-    .cta-button {
-        position: relative;
-        overflow: hidden;
-        border: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-    }
-    .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-    }
-    .cta-button:active {
-        transform: translateY(0);
-    }
-    .cta-icon {
-        display: inline-block;
-        transition: all 0.3s ease;
-    }
-    .cta-button:hover .cta-icon {
-        transform: translateX(3px);
-    }
-    
-    [data-aos] {
-        transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    [data-aos="fade-up"] {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    [data-aos="fade-down"] {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    [data-aos="fade-right"] {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    [data-aos="fade-left"] {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    [data-aos].aos-animate {
-        opacity: 1;
-        transform: translate(0);
-    }
+  .hero-section {
+    background: linear-gradient(135deg, #2e7d32, #81c784);
+    color: white;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    opacity: 0.15;
+    z-index: 0;
+  }
+  
+  .feature-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+  
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: white;
+    background: linear-gradient(135deg, #2e7d32, #81c784);
+    box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+  }
+  
+  .feature-card:hover .feature-icon {
+    animation: bounce 0.5s;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .demo-section {
+    background: #f9f9f9;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .step-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2e7d32;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  
+  .stats-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+    margin: 10px 0;
+  }
+  
+  .cta-section {
+    background: linear-gradient(135deg, #2e7d32, #81c784);
+    color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .cta-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+  }
+  
+  .btn-cta {
+    background: white;
+    color: #2e7d32;
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
 </style>
+{% endblock %}
 
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section py-5" style="background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(46, 125, 50, 0.8)), url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center; background-size: cover;">
+  <div class="container py-5 position-relative" style="z-index: 1;">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-4">Descubre todas nuestras funciones</h1>
+        <p class="lead mb-4">Una experiencia completa para gestionar y optimizar tu reciclaje</p>
+        <a href="{{ url_for('impacto') }}" class="btn btn-light btn-lg px-4">
+          <i class="fas fa-play-circle me-2"></i> Comenzar ahora
+        </a>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded-3 shadow floating-animation" alt="Manos sosteniendo planta" style="max-height: 300px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge bg-success bg-opacity-20 text-success mb-3 px-3 py-2">FUNCIONALIDADES</span>
+      <h2 class="fw-bold">Todo lo que puedes hacer con EcoRecicla</h2>
+      <p class="text-muted">Herramientas diseñadas para hacer tu reciclaje más efectivo y gratificante</p>
+    </div>
+    
+    <div class="row g-4">
+      <!-- Feature 1 -->
+      <div class="col-md-4">
+        <div class="feature-card h-100 p-4">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="h5 fw-bold text-center mb-3">Registro Inteligente</h3>
+          <p class="text-muted text-center">Registra tus materiales reciclados de forma rápida y precisa con nuestro sistema optimizado.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Multiples materiales</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Historial completo</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Ubicaciones guardadas</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Feature 2 -->
+      <div class="col-md-4">
+        <div class="feature-card h-100 p-4">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="h5 fw-bold text-center mb-3">Impacto Visual</h3>
+          <p class="text-muted text-center">Visualiza tu contribución ambiental con gráficos interactivos y métricas comprensibles.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Gráficos mensuales</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Comparativas</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Progreso personal</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Feature 3 -->
+      <div class="col-md-4">
+        <div class="feature-card h-100 p-4">
+          <div class="feature-icon">
+            <i class="fas fa-file-export"></i>
+          </div>
+          <h3 class="h5 fw-bold text-center mb-3">Reportes Automáticos</h3>
+          <p class="text-muted text-center">Genera certificados de impacto ambiental listos para compartir en redes sociales.</p>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Formatos PDF/Excel</li>
+            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Diseños profesionales</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Compartir fácilmente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="py-5 demo-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="img-fluid rounded-3 shadow" alt="Persona usando la app">
+      </div>
+      <div class="col-lg-6 ps-lg-5">
+        <span class="badge bg-success bg-opacity-20 text-success mb-3 px-3 py-2">CÓMO FUNCIONA</span>
+        <h2 class="fw-bold mb-4">Registra tu reciclaje en simples pasos</h2>
+        
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div>
+            <h5 class="fw-bold">Selecciona el material</h5>
+            <p class="text-muted mb-0">Elige entre plástico, vidrio, papel, cartón o metal.</p>
+          </div>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div>
+            <h5 class="fw-bold">Ingresa la cantidad</h5>
+            <p class="text-muted mb-0">Especifica los kilogramos que estás reciclando.</p>
+          </div>
+        </div>
+        
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div>
+            <h5 class="fw-bold">Visualiza tu impacto</h5>
+            <p class="text-muted mb-0">Observa cómo contribuyes al medio ambiente.</p>
+          </div>
+        </div>
+        
+        <a href="{{ url_for('impacto') }}" class="btn btn-success mt-3 px-4 py-2">
+          <i class="fas fa-play me-2"></i> Ver demostración
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="stats-card h-100">
+          <i class="fas fa-recycle text-success" style="font-size: 2rem;"></i>
+          <div class="stat-number">+500</div>
+          <p class="text-muted">Materiales registrados</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="stats-card h-100">
+          <i class="fas fa-cloud text-success" style="font-size: 2rem;"></i>
+          <div class="stat-number">1.2T</div>
+          <p class="text-muted">CO₂ reducido</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="stats-card h-100">
+          <i class="fas fa-smile text-success" style="font-size: 2rem;"></i>
+          <div class="stat-number">100%</div>
+          <p class="text-muted">Satisfacción usuarios</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 cta-section">
+  <div class="container py-4 text-center position-relative" style="z-index: 1;">
+    <h2 class="h1 fw-bold mb-4">¿Listo para comenzar?</h2>
+    <p class="lead mb-4">Únete a nuestra comunidad eco-friendly y lleva tu reciclaje al siguiente nivel</p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="{{ url_for('impacto') }}" class="btn btn-cta">
+        <i class="fas fa-plus-circle me-2"></i> Registrar Reciclaje
+      </a>
+      <a href="{{ url_for('estadisticas') }}" class="btn btn-outline-light">
+        <i class="fas fa-chart-bar me-2"></i> Ver Estadísticas
+      </a>
+    </div>
+  </div>
+</section>
+
+{% block extra_js %}
 <script>
-    // Simple AOS implementation
-    document.addEventListener('DOMContentLoaded', function() {
-        const elements = document.querySelectorAll('[data-aos]');
+  // Animación de elementos al hacer scroll
+  document.addEventListener('DOMContentLoaded', function() {
+    const animateOnScroll = function() {
+      const elements = document.querySelectorAll('.feature-card, .stats-card, .step-card');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
         
-        function checkPosition() {
-            elements.forEach(element => {
-                const position = element.getBoundingClientRect();
-                if (position.top < window.innerHeight * 0.75) {
-                    element.classList.add('aos-animate');
-                }
-            });
+        if(elementPosition < screenPosition) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
         }
-        
-        window.addEventListener('scroll', checkPosition);
-        window.addEventListener('resize', checkPosition);
-        checkPosition();
+      });
+    };
+    
+    // Inicializar elementos con opacidad 0
+    const animateElements = document.querySelectorAll('.feature-card, .stats-card, .step-card');
+    animateElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'all 0.5s ease';
     });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Ejecutar una vez al cargar
+  });
 </script>
+{% endblock %}
+
 {% endblock %}

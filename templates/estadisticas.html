@@ -1,9 +1,29 @@
-{% extends 'base.html' %}
+<script>
+  // Asegúrate de que data_json es un objeto JSON válido
+  const chartData = JSON.parse('{{ data_json | tojson | safe }}');
 
-{% block title %}Estadisticas{% endblock %}
-
-{% block content %}
-<h1>INFORMACION2</h1>
-<p>Este es el contenido de la página de información 2.</p>
-{% endblock %}
-
+  const ctx = document.getElementById('graficoMateriales').getContext('2d');
+  const chart = new Chart(ctx, {
+    type: 'bar',
+    data: chartData,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top' },
+        title: {
+          display: true,
+          text: 'Materiales reciclados por tipo y mes'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: 'Kg' }
+        },
+        x: {
+          title: { display: true, text: 'Mes/Año' }
+        }
+      }
+    }
+  });
+</script>

@@ -1,10 +1,100 @@
 {% extends 'base.html' %}
-{% block title %}Reportes{% endblock %}
+{% block title %}Reportes de Reciclaje{% endblock %}
+
 {% block content %}
-<div class="container my-5">
-  <h2 class="text-primary text-center mb-4">Generación de reportes</h2>
-  <p class="text-center">Pronto podrás exportar reportes en PDF o Excel con los resultados de reciclaje.</p>
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <span class="eco-badge mb-3">Exportar datos</span>
+    <h1 class="fw-bold">Genera reportes de tu reciclaje</h1>
+    <p class="lead text-muted">Descarga informes detallados de tu actividad de reciclaje.</p>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card shadow border-0 h-100">
+        <div class="card-body p-4 text-center">
+          <div class="bg-danger bg-opacity-10 rounded-circle p-4 mb-4 mx-auto" style="width: 100px; height: 100px;">
+            <i class="fas fa-file-pdf text-danger" style="font-size: 2.5rem;"></i>
+          </div>
+          <h3 class="h5 fw-bold mb-3">Reporte PDF</h3>
+          <p class="text-muted mb-4">Genera un documento profesional con tus estadísticas de reciclaje, listo para imprimir o compartir.</p>
+          <a href="#" class="btn btn-danger px-4">
+            <i class="fas fa-download me-2"></i> Descargar PDF
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="card shadow border-0 h-100">
+        <div class="card-body p-4 text-center">
+          <div class="bg-success bg-opacity-10 rounded-circle p-4 mb-4 mx-auto" style="width: 100px; height: 100px;">
+            <i class="fas fa-file-excel text-success" style="font-size: 2.5rem;"></i>
+          </div>
+          <h3 class="h5 fw-bold mb-3">Reporte Excel</h3>
+          <p class="text-muted mb-4">Exporta tus datos en formato de hoja de cálculo para análisis avanzados o presentaciones.</p>
+          <a href="#" class="btn btn-success px-4">
+            <i class="fas fa-download me-2"></i> Descargar Excel
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card shadow border-0 mt-4">
+    <div class="card-body p-4">
+      <h3 class="h5 fw-bold mb-3"><i class="fas fa-cog me-2"></i> Personalizar reporte</h3>
+      <form>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="fechaInicio" class="form-label">Fecha de inicio</label>
+            <input type="date" class="form-control" id="fechaInicio">
+          </div>
+          <div class="col-md-6">
+            <label for="fechaFin" class="form-label">Fecha de fin</label>
+            <input type="date" class="form-control" id="fechaFin">
+          </div>
+          <div class="col-md-6">
+            <label for="tipoMaterial" class="form-label">Tipo de material</label>
+            <select class="form-select" id="tipoMaterial">
+              <option value="todos">Todos los materiales</option>
+              <option value="Plástico">Plástico</option>
+              <option value="Vidrio">Vidrio</option>
+              <option value="Papel">Papel</option>
+              <option value="Cartón">Cartón</option>
+              <option value="Metal">Metal</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="formato" class="form-label">Formato</label>
+            <select class="form-select" id="formato">
+              <option value="pdf">PDF</option>
+              <option value="excel">Excel</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-file-export me-2"></i> Generar Reporte
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
+
+<style>
+  .card {
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .btn {
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+  }
+</style>
 {% endblock %}
-
-
