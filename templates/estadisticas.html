@@ -1,29 +1,40 @@
-<script>
-  // Asegúrate de que data_json es un objeto JSON válido
-  const chartData = JSON.parse('{{ data_json | tojson | safe }}');
+{% extends 'base.html' %}
+{% block title %}Estadísticas Simples{% endblock %}
 
-  const ctx = document.getElementById('graficoMateriales').getContext('2d');
-  const chart = new Chart(ctx, {
-    type: 'bar',
-    data: chartData,
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { position: 'top' },
-        title: {
-          display: true,
-          text: 'Materiales reciclados por tipo y mes'
-        }
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          title: { display: true, text: 'Kg' }
-        },
-        x: {
-          title: { display: true, text: 'Mes/Año' }
-        }
-      }
-    }
-  });
-</script>
+{% block content %}
+<div class="container py-5">
+    <div class="card shadow">
+        <div class="card-header bg-success text-white">
+            <h2><i class="fas fa-recycle me-2"></i>Estadísticas de Reciclaje</h2>
+        </div>
+        
+        <div class="card-body">
+            <!-- Resumen General -->
+            <div class="row mb-4">
+                <!-- Cards de resumen aquí -->
+            </div>
+            
+            <!-- Tabla Principal -->
+            <div class="table-responsive mb-5">
+                <!-- Tabla con efectos aquí -->
+            </div>
+            
+            <!-- Barras de Progreso -->
+            <div class="mt-5">
+                <!-- Barras por material aquí -->
+            </div>
+            
+            <!-- Tarjetas de Materiales -->
+            <div class="row mt-4">
+                <!-- Tarjetas con iconos aquí -->
+            </div>
+            
+            <!-- Mensaje de impacto -->
+            <div class="alert alert-success mt-4">
+                <i class="fas fa-leaf me-2"></i>
+                <strong>Impacto ecológico:</strong> Has ayudado a salvar {{ arboles }} árboles.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

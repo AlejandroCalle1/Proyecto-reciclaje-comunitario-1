@@ -62,57 +62,49 @@ def funciones():
 def reportes():
     return render_template('reportes.html')
 
-# Función para estadísticas y árboles salvados
+# Función para calcular estadísticas (versión simplificada)
 def calcular_estadisticas():
     estadisticas = defaultdict(lambda: defaultdict(float))
     arboles_salvados = 0
 
     try:
         with open('materiales_reciclados.csv', 'r', encoding='utf-8') as archivo:
-            for linea in archivo:
-                tipo, cantidad, fecha, ubicacion, co2 = linea.strip().split(',')
-                cantidad = float(cantidad)
-                fecha_obj = datetime.strptime(fecha, "%Y-%m-%d")
-                mes_anio = fecha_obj.strftime("%Y-%m")
-                estadisticas[mes_anio][tipo] += cantidad
-                if tipo == 'Papel':
-                    arboles_salvados += cantidad / 100
+            reader = csv.reader(archivo)
+            for linea in reader:
+                if len(linea) >= 5:  # Asegura que tenga todos los campos
+                    tipo = linea[0]
+                    cantidad = float(linea[1])
+                    fecha = linea[2]
+                    
+                    # Procesar fecha y agrupar por mes-año
+                    fecha_obj = datetime.strptime(fecha, "%Y-%m-%d")
+                    mes_anio = fecha_obj.strftime("%Y-%m")
+                    
+                    # Sumar cantidades por material y mes
+                    estadisticas[mes_anio][tipo] += cantidad
+                    
+                    # Calcular árboles salvados (solo para papel)
+                    if tipo == 'Papel':
+                        arboles_salvados += cantidad / 100  # 100kg de papel = 1 árbol
     except FileNotFoundError:
         pass
 
     return estadisticas, round(arboles_salvados, 2)
 
-# Ruta para estadísticas con datos para gráfico
+# Ruta para estadísticas (versión tabla HTML)
 @app.route('/estadisticas')
 def estadisticas():
     estadisticas_data, arboles = calcular_estadisticas()
-
-    etiquetas = sorted(estadisticas_data.keys())
-    tipos_material = set()
-
-    for mes in estadisticas_data:
-        tipos_material.update(estadisticas_data[mes].keys())
-
-    tipos_material = sorted(tipos_material)
-
-    datasets = []
-    for tipo in tipos_material:
-        datos_tipo = []
-        for mes in etiquetas:
-            datos_tipo.append(estadisticas_data[mes].get(tipo, 0))
-        datasets.append({
-            "label": tipo,
-            "data": datos_tipo
-        })
+    
+    # Obtener todos los tipos de materiales únicos y ordenados
+    tipos_material = sorted({tipo for mes in estadisticas_data.values() for tipo in mes.keys()})
 
     return render_template(
         'estadisticas.html',
         estadisticas=estadisticas_data,
-        arboles=arboles,
-        etiquetas=etiquetas,
-        datasets=datasets
+        tipos_material=tipos_material,
+        arboles=arboles
     )
 
-# Ejecutar app
 if __name__ == '__main__':
     app.run(debug=True)
