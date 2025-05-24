@@ -44,7 +44,7 @@
   <div class="card shadow border-0 mt-4">
     <div class="card-body p-4">
       <h3 class="h5 fw-bold mb-3"><i class="fas fa-cog me-2"></i> Personalizar reporte</h3>
-      <form>
+      <form method="POST" action="{{ url_for('reportes') }}">
         <div class="row g-3">
           <div class="col-md-6">
             <label for="fechaInicio" class="form-label">Fecha de inicio</label>
@@ -70,6 +70,17 @@
             <select class="form-select" id="formato">
               <option value="pdf">PDF</option>
               <option value="excel">Excel</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="metricas" class="form-label">Métricas a incluir</label>
+            <select multiple class="form-select" id="metricas" name="metricas">
+              <option value="co2" selected>CO₂ evitado</option>
+              <option value="energia" selected>Energía ahorrada</option>
+              <option value="agua" selected>Agua ahorrada</option>
+              <option value="residuos">Residuos reducidos</option>
+              <option value="arboles">Árboles salvados</option>
+              <option value="petroleo">Petróleo ahorrado</option>
             </select>
           </div>
           <div class="col-12">

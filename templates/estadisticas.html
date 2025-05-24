@@ -11,28 +11,66 @@
         <div class="card-body">
             <!-- Resumen General -->
             <div class="row mb-4">
-                <!-- Cards de resumen aquí -->
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-cloud text-success mb-3" style="font-size: 2rem;"></i>
+                            <h3>CO₂ evitado</h3>
+                            <div class="impact-number">{{ totales.co2|round(2) }} kg</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bolt text-success mb-3" style="font-size: 2rem;"></i>
+                            <h3>Energía ahorrada</h3>
+                            <div class="impact-number">{{ totales.energia|round(2) }} kWh</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tint text-success mb-3" style="font-size: 2rem;"></i>
+                            <h3>Agua ahorrada</h3>
+                            <div class="impact-number">{{ totales.agua|round(2) }} L</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- Tabla Principal -->
             <div class="table-responsive mb-5">
-                <!-- Tabla con efectos aquí -->
-            </div>
-            
-            <!-- Barras de Progreso -->
-            <div class="mt-5">
-                <!-- Barras por material aquí -->
-            </div>
-            
-            <!-- Tarjetas de Materiales -->
-            <div class="row mt-4">
-                <!-- Tarjetas con iconos aquí -->
+                <table class="table table-striped">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Mes/Año</th>
+                            {% for material in tipos_material %}
+                            <th>{{ material }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for mes, datos in estadisticas.items() %}
+                        <tr>
+                            <td>{{ mes }}</td>
+                            {% for material in tipos_material %}
+                            <td>{{ datos.get(material, 0)|round(2) }} kg</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
             
             <!-- Mensaje de impacto -->
             <div class="alert alert-success mt-4">
                 <i class="fas fa-leaf me-2"></i>
-                <strong>Impacto ecológico:</strong> Has ayudado a salvar {{ arboles }} árboles.
+                <strong>Impacto ecológico total:</strong><br>
+                • {{ totales.arboles|round(2) }} árboles salvados<br>
+                • {{ totales.petroleo|round(2) }} litros de petróleo ahorrados<br>
+                • {{ totales.residuos|round(2) }} kg de residuos reducidos
             </div>
         </div>
     </div>
