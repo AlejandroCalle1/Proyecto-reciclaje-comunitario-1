@@ -12,11 +12,11 @@ materiales = []
 # Matrices de conversión ambiental
 MATRICES_IMPACTO = {
     'ahorro_energia': np.array([
-        [5.91, 0], 
-        [0.35, 0], 
-        [3.0, 0], 
-        [2.5, 0], 
-        [11.0, 0]
+        [5.91, 0],  #plastico
+        [0.35, 0], #vidrio
+        [3.0, 0], #papel
+        [2.5, 0], #carton
+        [11.0, 0]#metal
     ]),
     'ahorro_agua': np.array([
         [30, 0], 
